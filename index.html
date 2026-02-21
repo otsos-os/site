@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OTSOS - Obviosly The Slowest Operating System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="b" bgcolor="#030305" text="#e0e0e0"
+    style="margin:0; padding:0; overflow:hidden; font-family: 'Outfit', sans-serif; background: linear-gradient(135deg, #030305 0%, #0a0a1a 50%, #050010 100%); min-height: 100vh;">
+
+
+    <div id="sp"
+        style="position:fixed; top:0; left:0; width:100%; height:100%; background:#030305; z-index:2000; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <img src="otsos.jpg" id="logo"
+            style="width:280px; cursor:pointer; filter: drop-shadow(0 0 20px rgba(0,212,255,0.3));" onclick="s()">
+        <h1
+            style="font-weight:900; letter-spacing:15px; margin-top:40px; background: linear-gradient(to right, #00d4ff, #9b51ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            OTSOS</h1>
+        <div id="ld"
+            style="width:300px; height:3px; background:#111; margin-top:30px; position:relative; overflow:hidden; border-radius:10px;">
+            <div id="lb"
+                style="position:absolute; height:100%; width:0%; background:linear-gradient(to right, #00d4ff, #9b51ff); box-shadow: 0 0 15px #00d4ff;">
+            </div>
+        </div>
+        <p id="st"
+            style="font-family:'JetBrains Mono'; font-size:14px; color:#444; margin-top:15px; letter-spacing:1px;">
+            INITIALIZING CORE...</p>
+    </div>
+
+    <div id="mn" style="display:none; width:100%; height:100vh; position:relative; overflow:hidden;">
+
+        <div id="nav"
+            style="position:absolute; top:0; width:100%; z-index:1000; padding:30px 60px; box-sizing:border-box; display:flex; justify-content:space-between; align-items:center; background: rgba(3,3,5,0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-weight:900; font-size:28px; background: linear-gradient(to right, #00d4ff, #9b51ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing:3px; cursor:pointer;"
+                onclick="go('home')">OTSOS</div>
+            <div style="display:flex; gap:50px; font-weight:600; font-size:16px; letter-spacing:1px;">
+                <span onclick="go('home')" class="ni" style="cursor:pointer; color:#777; transition: 0.3s;">HOME</span>
+                <span onclick="go('team')" class="ni" style="cursor:pointer; color:#777; transition: 0.3s;">TEAM</span>
+                <span onclick="go('license')" class="ni"
+                    style="cursor:pointer; color:#777; transition: 0.3s;">LICENSE</span>
+                <span onclick="go('quest')" class="ni"
+                    style="cursor:pointer; color:#777; transition: 0.3s;">QUEST</span>
+                <span onclick="go('ascii')" class="ni"
+                    style="cursor:pointer; color:#777; transition: 0.3s;">ASCII</span>
+            </div>
+            <div style="display:flex; gap:20px;">
+                <a href="https://t.me/otsosdev" target="_blank"
+                    style="padding:12px 25px; border:1px solid rgba(0,212,255,0.5); color:#00d4ff; text-decoration:none; font-size:14px; border-radius:100px; font-weight:bold; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(0,212,255,0.1)'"
+                    onmouseout="this.style.background='transparent'">TELEGRAM</a>
+                <a href="https://github.com/otsos-os/otsos2" target="_blank"
+                    style="padding:12px 25px; background:linear-gradient(to right, #00d4ff, #9b51ff); color:#000; text-decoration:none; font-size:14px; border-radius:100px; font-weight:bold; box-shadow: 0 4px 15px rgba(0,212,255,0.3);">GITHUB</a>
+            </div>
+        </div>
+
+        <div id="sw" style="width:100%; height:100%; position:relative;">
+
+            <div id="sec-home"
+                style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; padding:50px; box-sizing:border-box;">
+                <div id="glow-1"
+                    style="position:absolute; width:600px; height:600px; background:radial-gradient(circle, rgba(0,212,255,0.1) 0%, rgba(0,0,0,0) 70%); z-index:-1; pointer-events:none; filter:blur(40px);">
+                </div>
+                <div id="glow-2"
+                    style="position:absolute; width:400px; height:400px; background:radial-gradient(circle, rgba(155,81,255,0.1) 0%, rgba(0,0,0,0) 70%); z-index:-1; pointer-events:none; filter:blur(40px);">
+                </div>
+
+                <div style="max-width:900px;">
+                    <font size="7" style="font-weight:900; letter-spacing:-3px; line-height:1; display:block;">Obviosly
+                        The <span
+                            style="background: linear-gradient(to right, #00d4ff, #9b51ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Slowest</span>
+                        Operating System</font>
+                    <p style="font-size:22px; color:#888; margin-top:30px; line-height:1.6; font-weight:300;">
+                        The ultimate experiment in building an <b>amd64</b> kernel from absolute zero.
+                        A craftsmanship of C, Assembly, and Zig. Built to be slow, stable, and purely honest.
+                    </p>
+
+                    <div style="margin-top:60px; display:flex; justify-content:center; gap:30px; width:100%;">
+                        <a href="https://www.uclibc.org/docs/psABI-x86_64.pdf" target="_blank"
+                            style="text-decoration:none; color:inherit; display:block; transition: 0.3s;"
+                            onmouseover="this.style.transform='translateY(-10px)'"
+                            onmouseout="this.style.transform='translateY(0)'">
+                            <div
+                                style="width:240px; padding:40px; background:rgba(20,20,25,0.5); border-radius:30px; border:1px solid rgba(255,255,255,0.05); text-align:left; backdrop-filter:blur(10px);">
+                                <h3 style="color:#00d4ff; margin:0; font-size:16px; letter-spacing:1px;">ARCH</h3>
+                                <p style="color:#555; font-size:14px; margin:15px 0 0 0;">x86-64 long mode.<br>System V
+                                    ABI.</p>
+                                <div style="margin-top:20px; color:#9b51ff; font-size:12px; font-weight:900;">READ SPEC
+                                    →</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/otsos-os/otsos2/tree/master/src/kernel" target="_blank"
+                            style="text-decoration:none; color:inherit; display:block; transition: 0.3s;"
+                            onmouseover="this.style.transform='translateY(-10px)'"
+                            onmouseout="this.style.transform='translateY(0)'">
+                            <div
+                                style="width:240px; padding:40px; background:rgba(20,20,25,0.5); border-radius:30px; border:1px solid rgba(255,255,255,0.05); text-align:left; backdrop-filter:blur(10px);">
+                                <h3 style="color:#00d4ff; margin:0; font-size:16px; letter-spacing:1px;">CORE</h3>
+                                <p style="color:#555; font-size:14px; margin:15px 0 0 0;">Hand-crafted kernel.<br>POSIX
+                                    syscalls.</p>
+                                <div style="margin-top:20px; color:#9b51ff; font-size:12px; font-weight:900;">EXPLORE
+                                    KERNEL →</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/otsos-os/otsos2" target="_blank"
+                            style="text-decoration:none; color:inherit; display:block; transition: 0.3s;"
+                            onmouseover="this.style.transform='translateY(-10px)'"
+                            onmouseout="this.style.transform='translateY(0)'">
+                            <div
+                                style="width:240px; padding:40px; background:rgba(20,20,25,0.5); border-radius:30px; border:1px solid rgba(255,255,255,0.05); text-align:left; backdrop-filter:blur(10px);">
+                                <h3 style="color:#00d4ff; margin:0; font-size:16px; letter-spacing:1px;">CODE</h3>
+                                <p style="color:#555; font-size:14px; margin:15px 0 0 0;">C, Assembly,
+                                    Zig.<br>Govno-driven dev.</p>
+                                <div style="margin-top:20px; color:#9b51ff; font-size:12px; font-weight:900;">VIEW REPO
+                                    →</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sec-team"
+                style="display:none; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:50px; box-sizing:border-box; background: radial-gradient(circle at center, rgba(155,81,255,0.05) 0%, transparent 70%);">
+                <h2 style="font-weight:900; font-size:50px; margin-bottom:50px; letter-spacing:-2px;">The <span
+                        style="color:#9b51ff;">Mastermind</span></h2>
+                <div
+                    style="width:100%; max-width:600px; padding:50px; background:rgba(20,20,25,0.6); border-radius:40px; border:1px solid rgba(155,81,255,0.2); display:flex; align-items:center; justify-content:space-between; backdrop-filter:blur(20px);">
+                    <div>
+                        <h3 style="color:#00d4ff; margin:0; font-size:14px; letter-spacing:4px;">CORE DEVELOPER</h3>
+                        <h2 style="margin:15px 0;"><a href="https://github.com/Bogdan0759" target="_blank"
+                                style="color:#fff; text-decoration:none; font-weight:900; font-size:42px; letter-spacing:-1px;">Bogdan0759</a>
+                        </h2>
+                        <p style="color:#777; font-size:18px; margin:0; font-weight:300;">The architect behind the
+                            slowest kernel in the universe.</p>
+                        <div style="margin-top:30px; display:flex; gap:15px;">
+                            <a href="https://github.com/Bogdan0759" target="_blank"
+                                style="color:#9b51ff; text-decoration:none; font-weight:bold; font-size:14px;">FOLLOW ON
+                                GITHUB →</a>
+                        </div>
+                    </div>
+                    <img src="https://avatars.githubusercontent.com/u/178015771?v=4"
+                        style="width:160px; height:160px; border-radius:35px; border:4px solid #9b51ff; margin-left:30px; box-shadow: 0 0 30px rgba(155,81,255,0.3);">
+                </div>
+            </div>
+
+            <div id="sec-license"
+                style="display:none; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:50px; box-sizing:border-box; text-align:center; background: radial-gradient(circle at bottom, rgba(0,212,255,0.05) 0%, transparent 70%);">
+                <h2 style="font-weight:900; font-size:50px; margin-bottom:30px; letter-spacing:-2px;">Open Source <span
+                        style="color:#00d4ff;">Spirit</span></h2>
+                <div
+                    style="max-width:700px; padding:70px; background:rgba(20,20,25,0.6); border-radius:40px; border:1px solid rgba(0,212,255,0.2); backdrop-filter:blur(20px);">
+                    <h3 style="color:#00d4ff; margin:0; font-size:16px; letter-spacing:4px;">BSD 2-CLAUSE</h3>
+                    <p style="color:#aaa; font-size:18px; line-height:1.8; margin-top:40px; font-weight:300;">
+                        Redistribution and use in source and binary forms, with or without modification, are permitted
+                        provided that the copyright notice and this list of conditions are met.
+                    </p>
+                    <a href="https://opensource.org/license/bsd-2-clause" target="_blank"
+                        style="display:inline-block; margin-top:50px; padding:18px 45px; background:rgba(0,212,255,0.1); border:1px solid #00d4ff; color:#00d4ff; text-decoration:none; font-size:14px; border-radius:15px; font-weight:bold;">FULL
+                        LICENSE TEXT</a>
+                </div>
+            </div>
+
+            <div id="sec-quest"
+                style="display:none; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:80px 50px; box-sizing:border-box; text-align:center;">
+                <h2 style="font-weight:900; font-size:50px; letter-spacing:-2px;">The <span
+                        style="background: linear-gradient(to right, #00d4ff, #9b51ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Quest</span>
+                </h2>
+                <p style="color:#666; max-width:600px; font-size:16px; margin-bottom:20px;">fix the repository link
+                    by collecting fragments:<br><b style="color:#888;">lol</b></p>
+
+                <div id="q-box"
+                    style="width:100%; max-width:900px; height:500px; background:rgba(0,0,0,0.4); margin:20px auto; border-radius:40px; position:relative; overflow:hidden; border:2px dashed rgba(255,255,255,0.05); backdrop-filter:blur(10px);">
+                </div>
+
+                <div id="r-box"
+                    style="font-family:'JetBrains Mono'; font-size:24px; color:#222; background:rgba(0,0,0,0.8); padding:20px 50px; border-radius:20px; border:1px solid rgba(255,255,255,0.03); min-width:300px;">
+                    _ _ _ _
+                </div>
+
+                <div id="win" style="display:none; margin-top:20px;">
+                    <a id="fl" href="#" target="_blank"
+                        style="padding:20px 60px; background:linear-gradient(to right, #00d4ff, #9b51ff); color:#000; font-weight:900; text-decoration:none; border-radius:100px; font-size:20px; box-shadow: 0 10px 30px rgba(0,212,255,0.4);">link
+                        to
+                        repository</a>
+                </div>
+            </div>
+
+            <div id="sec-ascii"
+                style="display:none; flex-direction:column; align-items:center; justify-content:center; height:100%; width:100%; box-sizing:border-box; overflow:hidden;">
+                <pre
+                    style="font-family:'JetBrains Mono'; font-size:1.1vw; line-height:0.9; color:#00d4ff; background:transparent; margin:0; padding:0; user-select:none; filter: drop-shadow(0 0 10px rgba(0,212,255,0.5));">
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+@@@@@##@@@@@:@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#@@@@**@@@@+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##@@@**@@@*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@%++++****++++++****+++++*@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@*#@@@@@%%@@@@@@@%%%@@@@@+%@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@+@@@@@:#@:*@@@@==@+=@@@@+#@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@+@@@@@:#@:*@@@@==@+=@@@@+#@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@%%%=---=##%@@@@@@@@**@@@@@@@@@@@@@@@@@@@@@%+%@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@#---------:---+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@+--=---------=---#@@@@@@@@@@+#@@@@@@@@@@@@=%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@#--%%%------=%%#---#@@@@@@@@@=@@@@@@@@@@@@@=%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@%----*=--+++---*=---+%@@@@@@@@=%@@@@@@@@@@@@=%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@%-=++**++#%#==#+++=--*@@@@@@@@@%@@@#*****@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@%-**+**+=-#-=+#++*+---#@@@@@@@@@+@@@@#%@+@@+@#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@%--+*=+****###+=*+-----+%@@@@@@*#@@@=#@@#@#@@@+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@%--+*=+****###+=*+-----+%@@@@@@*#@@@=#@@#@#@@@+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@%===-----------------------+*#@#%@@@@#%@@%#@@@+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@%================================+%@@@*@@*%@@##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@#===================================#%@@@@@@@@@@@@@@@@@%*===%@@@@@@@@@@@@@@
+@@@@%*====================================*#@@@@@@@@@@@@%#==*%#%@@@@@@@@@@@@@@@
+@@@@@#+=====================================+*%@@@@@@@@%+===*%%@@@@@@@@@@@@@@@@
+@@@@@@#+========+====+=======++===============++*%%%%%+====++*%@@@@@@@@@@@@@@@@
+@@@@@@@%*++++++++++++#*+++++++#*++++++++++++++++++++++++++######%@@@@@@@@@@@@@@
+@@@@@%#*%%*++++++++++#%*+++++++##++++++++++++++++++++++++++++++++*%@@@@@@@@@@@@
+@@@%#****#%#*+++++++++##*++++++++%*+++++++++++++++++++*+++++++++***#@@@@@@@@@@@
+@@@%#****#%#*+++++++++##*++++++++%*+++++++++++++++++++*+++++++++***#@@@@@@@@@@@
+@%#********#@@##*******#%#**++****%****++*++******##@@@@@@%*******###%@@@@@@@@@
+@@%%%%%%%%@@@@@@@%%####**%%%**#**%%******####%%%@@@@@@@@@@@@@@@%%%%%%@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@%+++*@@=..+%@@+++*@@*+++*@@@++=+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@.*@%::@#::@@@.=@@@@=.+@%.=@::%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@%.#@@::@%::@@@*::.#@=.*@@.=@#::.+%@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@:=#*:+@%::#@%###:.%+.=#*.*@#**-.*@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@%%%@@@@@%%@@%%%%@@@@%%%@@@%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                </pre>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script id="l">
+        const sp = document.getElementById('sp');
+        const mn = document.getElementById('mn');
+        const lb = document.getElementById('lb');
+        const st = document.getElementById('st');
+        const logo = document.getElementById('logo');
+        const qb = document.getElementById('q-box');
+        const rb = document.getElementById('r-box');
+        const win = document.getElementById('win');
+        const fl = document.getElementById('fl');
+        const g1 = document.getElementById('glow-1');
+        const g2 = document.getElementById('glow-2');
+
+        const seal = new Audio('seal.mp3');
+        function s() { seal.currentTime = 0; seal.play(); }
+
+        let p = 0;
+        const msgs = ["alocate memory...", "boot kernel...", "load govno code...", "syscall init...", "READY."];
+        let mi = 0;
+        const sl = setInterval(() => {
+            p += (100 - p) * 0.1;
+            lb.style.width = p + '%';
+            if (p > 99) {
+                clearInterval(sl);
+                setTimeout(() => {
+                    sp.style.opacity = '0';
+                    sp.style.transition = 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)';
+                    setTimeout(() => {
+                        sp.style.display = 'none';
+                        mn.style.display = 'block';
+                        go('home');
+                    }, 1000);
+                }, 400);
+            }
+            if (p > mi * 20 && mi < msgs.length) {
+                st.innerText = msgs[mi];
+                mi++;
+            }
+        }, 120);
+
+        const secs = ['home', 'team', 'license', 'quest', 'ascii'];
+        function go(id) {
+            secs.forEach(s => {
+                const el = document.getElementById('sec-' + s);
+                if (s === id) {
+                    el.style.display = 'flex';
+                    el.style.opacity = '0';
+                    el.style.transition = 'opacity 0.8s ease';
+                    requestAnimationFrame(() => el.style.opacity = '1');
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+            const nits = document.getElementsByClassName('ni');
+            for (let i = 0; i < nits.length; i++) {
+                nits[i].style.color = secs[i] === id ? '#00d4ff' : '#555';
+            }
+
+            if (id === 'quest') initQuest();
+            else cancelAnimationFrame(animId);
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            if (document.getElementById('sec-home').style.display === 'flex') {
+                g1.style.left = (e.clientX - 300) + 'px';
+                g1.style.top = (e.clientY - 300) + 'px';
+                g2.style.left = (window.innerWidth - e.clientX - 200) + 'px';
+                g2.style.top = (window.innerHeight - e.clientY - 200) + 'px';
+            }
+        });
+
+        const parts = ["https://", "github.com/", "otsos-os/", "otsos2"];
+        let coll = [];
+        let shards = [];
+        let animId;
+
+        function initQuest() {
+            coll = [];
+            shards = [];
+            qb.innerHTML = '';
+            rb.innerText = "_ _ _ _";
+            rb.style.color = "#333";
+            win.style.display = 'none';
+            cancelAnimationFrame(animId);
+
+            parts.forEach((text, i) => {
+                const el = document.createElement('div');
+                el.innerText = text;
+                el.style.position = 'absolute';
+                el.style.padding = '15px 30px';
+                el.style.background = 'rgba(26,26,35,0.8)';
+                el.style.color = '#00d4ff';
+                el.style.border = '1px solid rgba(0,212,255,0.2)';
+                el.style.borderRadius = '15px';
+                el.style.cursor = 'pointer';
+                el.style.fontFamily = "'JetBrains Mono'";
+                el.style.userSelect = 'none';
+                el.style.fontWeight = 'bold';
+                el.style.backdropFilter = 'blur(5px)';
+                el.style.transition = 'transform 0.2s, background 0.2s';
+
+                let x = Math.random() * (qb.clientWidth - 180);
+                let y = Math.random() * (qb.clientHeight - 60);
+                let dx = (Math.random() - 0.5) * 1.8;
+                let dy = (Math.random() - 0.5) * 1.8;
+
+                el.onmouseover = () => { el.style.background = 'rgba(0,212,255,0.1)'; el.style.transform = 'scale(1.1)'; };
+                el.onmouseout = () => { el.style.background = 'rgba(26,26,35,0.8)'; el.style.transform = 'scale(1)'; };
+
+                el.onclick = (e) => {
+                    e.stopPropagation();
+                    if (text === parts[coll.length]) {
+                        coll.push(text);
+                        el.style.display = 'none';
+                        rb.innerText = coll.join('');
+                        rb.style.color = '#00d4ff';
+                        if (coll.length === parts.length) {
+                            win.style.display = 'block';
+                            fl.href = coll.join('');
+                        }
+                    } else {
+                        rb.style.color = '#ff4444';
+                        rb.innerText = "KERNEL PANIC";
+                        setTimeout(initQuest, 800);
+                    }
+                };
+                qb.appendChild(el);
+                shards.push({ el, x, y, dx, dy });
+            });
+            loop();
+        }
+
+        function loop() {
+            if (document.getElementById('sec-quest').style.display === 'none') return;
+            shards.forEach(s => {
+                s.x += s.dx;
+                s.y += s.dy;
+                if (s.x < 0 || s.x > qb.clientWidth - s.el.clientWidth) s.dx *= -1;
+                if (s.y < 0 || s.y > qb.clientHeight - s.el.clientHeight) s.dy *= -1;
+                s.el.style.left = s.x + 'px';
+                s.el.style.top = s.y + 'px';
+            });
+            animId = requestAnimationFrame(loop);
+        }
+    </script>
+</body>
+
+</html>
